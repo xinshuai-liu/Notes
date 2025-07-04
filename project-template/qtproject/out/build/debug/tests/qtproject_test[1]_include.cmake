@@ -1,5 +1,0 @@
-if(EXISTS "D:/zRepository/source-repos/project-template/qtproject/out/build/debug/tests/qtproject_test[1]_tests.cmake")
-  include("D:/zRepository/source-repos/project-template/qtproject/out/build/debug/tests/qtproject_test[1]_tests.cmake")
-else()
-  add_test(qtproject_test_NOT_BUILT qtproject_test_NOT_BUILT)
-endif()

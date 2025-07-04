@@ -1,2 +1,0 @@
-D:\Qt\Tools\mingw1120_64\bin\ar.exe qc libmodule2.a CMakeFiles/module2.dir/test2.cpp.obj
-D:\Qt\Tools\mingw1120_64\bin\ranlib.exe libmodule2.a
