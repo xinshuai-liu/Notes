@@ -45,8 +45,6 @@ gen_ssh_key_rsa() {
         chmod 600 $HOME/.ssh/config
     fi
 
-    if [ ]
-
 cat >> $HOME/.ssh/config << 'EOF'
 Host github.com
   HostName github.com
