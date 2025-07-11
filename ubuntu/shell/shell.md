@@ -12,7 +12,7 @@
   </a>
 </div>
 
-## TOC
+## [TOC](#toc)
 - [demo](#demo)
 - [types and io](#types-and-io)
 - [control flow](#control-flow)

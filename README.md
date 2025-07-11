@@ -1,7 +1,19 @@
-# Notes
+<div align="center">
+  <a href="https://www.baidu.com">
+    <picture>
+      <img alt="Notes logo" src="./resources/images/lion.png" height="128">
+    </picture>
+  </a>
 
-目录
+  <strong>Notes</strong>
+  
+  <a href="https://www.baidu.com">
+    <img alt="Join the community on GitHub" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20">
+  </a>
+</div>
 
-[shell教程](./shell)
-[自用脚本](./script)
-[工程模板](./project-template)
+
+## [TOC](#toc)
+- [面试](./homework/)
+- [Linux](./ubuntu/)
+- [资源](./resources/)
