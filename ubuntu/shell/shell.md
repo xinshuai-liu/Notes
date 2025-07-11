@@ -1,6 +1,27 @@
-# 一、整体操作流程
-## 1、创建脚本
-[helloworld.sh](./helloworld.sh)
+<div align="center">
+  <a href="https://www.baidu.com">
+    <picture>
+      <img alt="Next.js logo" src="../../resources/images/lion.png" height="128">
+    </picture>
+  </a>
+
+  <strong>Lion</strong>
+  
+  <a href="https://www.baidu.com">
+    <img alt="Join the community on GitHub" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20">
+  </a>
+</div>
+
+## TOC
+- [demo](#demo)
+- [types and io](#types-and-io)
+- [control flow](#control-flow)
+    - [branch](#branch)
+    - [loop](#loop)
+- [functions](#functions)
+
+## [demo](#toc)
+#### 1、创建脚本
 ``` shell
 #!/bin/bash
 # 这是我的第一个shell脚本
@@ -10,7 +31,7 @@ echo "Hello World!"
 - 使用#注释
 - echo 用于输出文本
 
-## 2、执行脚本
+#### 2、执行脚本
 ```shell
 # 方法1：使用bash命令
 bash script.sh
@@ -19,12 +40,22 @@ bash script.sh
 chmod +x script.sh
 ./script.sh
 ```
-
-# 二、语法
-## 1、变量
-[var.sh](./var.sh)
+#### 注：系统资源监控脚本
 ```shell
 #!/bin/bash
+# 系统资源监控
+
+echo "====== 系统监控 ======"
+echo "当前时间: $(date)"
+echo "主机名: $(hostname)"
+echo "CPU使用率: $(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')%"
+echo "内存使用: $(free -m | awk '/Mem/{print $3"MB/"$2"MB"}')"
+echo "磁盘使用: $(df -h | awk '/\/$/{print $3" used / "$2" total"}')"
+```
+## [types and io](#toc)
+```shell
+#!/bin/bash
+
 echo "上一条命令退出状态：$?"
 echo "当前脚本(current script)：$0"
 echo "当前脚本参数：$# $10"
@@ -35,7 +66,6 @@ name="xinshuai"
 age=25
 echo "my name is ${name} and I'm ${age} years old."
 
-# 数组
 person=(
     "xinshuai","male",25,"NJ"
     "jack","remale",25,"SH"
@@ -45,12 +75,25 @@ echo "xinshuai info: ${person[1]}"
 echo "person info: ${person[@]}"
 echo "info nums: ${#person[@]}"
 ```
-## 2、条件
-[if.sh](./if.sh)
-[case.sh](./case.sh)
+io
 ```shell
 #!/bin/bash
+
+read -p "请输入你的名字: " username
+
+printf "姓名: %-10s 年龄: %02d\n" ${username} 25
+```
+## [control flow](#toc)
+### [branch](#toc)
+```shell
+#!/bin/bash
+
+# [] 内两侧需要空格
+# == 两侧需要空格
+
+# if-else
 read -p "请输入一个数字：" number
+
 if [ $number -gt 0 ]; then
     echo "大于0"
 elif [ $number == 0 ];then
@@ -58,13 +101,8 @@ elif [ $number == 0 ];then
 else
     echo "..."
 fi
-```
-- [] 内两侧需要空格
-- == 两侧需要空格
 
-```shell
-#!/bin/bash
-
+# case
 echo "请选择一个选项:"
 echo "1) 显示日期"
 echo "2) 显示当前用户"
@@ -83,12 +121,11 @@ case $opt in
         echo "无效选项";;
 esac
 ```
-
-## 3、循环
-[for.sh](./for.sh)
-[while.sh](./while.sh)
-``` shell
+### [loop](#toc)
+```shell
 #!/bin/bash
+
+# for
 for i in {1..10}; do
     echo "数字 : $i"
 done
@@ -96,9 +133,8 @@ done
 for file in *.sh; do
     echo "处理文件: $file"
 done
-```
-```shell
-#!/bin/bash
+
+# while
 count=1
 while [ $count -le 5 ]; do
     echo "计数: $count"
@@ -109,19 +145,17 @@ while true; do
     echo "running"
 done
 ```
+## [functions](#toc)
 
-## 4、函数
-[function.sh](./function.sh)
 ```shell
+#!/bin/bash
+# 函数
 greet() {
     local name=$1  # local 表示局部变量
     echo "Hello, $name!"
 }
-```
-## 5、IO
-```shell
-read -p "请输入你的名字: " username
-printf "姓名: %-10s 年龄: %03d\n" "Alice" 25
+# 调用
+greet "xinshuai"
 ```
 
 
