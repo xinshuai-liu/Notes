@@ -14,6 +14,6 @@
 
 
 ## [TOC](#toc)
-- [面试](./homework/)
-- [Linux](./ubuntu/)
-- [资源](./resources/)
+- [面试](./homework)
+- [Linux](./ubuntu)
+- [资源](./resources)
